@@ -70,15 +70,19 @@ def main():
     elif opcion == '2':
         #extraer método
         pasajero = crear_pasajero_desde_input()
+        def pedir_datos_reserva():
+            numero_vuelo = input("Ingrese el número de vuelo que desea reservar: ")
+            cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
+            return numero_vuelo, cantidad
+
 
 
         #extraer método
-        numero = input("Ingrese el número de vuelo que desea reservar: ")
-        cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
-
+        numero, cantidad = pedir_datos_reserva()
         reservar_vuelo(vuelos, numero, pasajero, cantidad)
+
     else:
         print("Opción no válida.")
 
 if _name_ == "_main_":
-main()
+    main()
